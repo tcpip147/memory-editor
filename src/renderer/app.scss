@@ -1,0 +1,75 @@
+$titlebar-baseSize: 16px;
+$titlebar-height: 28px;
+$titlebar-bg: #17211d;
+$titlebar-iconSize: 16px;
+$em: $titlebar-baseSize*1em;
+
+body {
+    margin: 0;
+}
+
+.app {
+    height: 100vh;
+
+    .customWindow {
+        display: flex;
+        height: $titlebar-height;
+        width: 100%;
+        background: $titlebar-bg;
+        font-size: $titlebar-baseSize;
+        user-select: none;
+        -webkit-app-region: drag;
+
+        .logo {
+            display: flex;
+            padding: 0 10px;
+
+            img {
+                margin-top: 5px;
+                width: $titlebar-iconSize;
+                height: $titlebar-iconSize;
+            }
+        }
+
+        .title {
+            display: flex;
+            padding: 4px 0px;
+            font-size: 0.8125rem;
+            text-shadow: 0px 1px 1px black;
+            color: #97a0b1;
+        }
+
+        .controls {
+            height: $titlebar-height;
+            display: flex;
+            align-items: stretch;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            color: #969799;
+
+            .control {
+                padding: 0 1.15em;
+                font-size: 0.875em;
+                display: flex;
+                height: 100%;
+                align-items: center;
+                -webkit-app-region: no-drag;
+
+                &.close:hover {
+                    background: #e10000;
+                }
+
+                &:hover {
+                    background: #242d38;
+                    color: #d8d9db;
+                }
+            }
+        }
+    }
+
+    .container {
+        height: calc(100vh - $titlebar-height);
+    }
+}

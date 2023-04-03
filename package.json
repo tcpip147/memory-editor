@@ -1,0 +1,47 @@
+{
+  "name": "memory-editor",
+  "productName": "Memory Editor",
+  "version": "1.0.0",
+  "main": "./.webpack/main",
+  "author": "tcpip147",
+  "description": "memory-editor",
+  "config": {
+    "forge": "./config/forge.config.js"
+  },
+  "customTitleBar": true,
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "gyp": "node-gyp build",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "jquery": "^3.6.4",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-react": "^7.18.6",
+    "@electron-forge/cli": "^6.0.5",
+    "@electron-forge/maker-deb": "^6.0.5",
+    "@electron-forge/maker-rpm": "^6.0.5",
+    "@electron-forge/maker-squirrel": "^6.0.5",
+    "@electron-forge/maker-zip": "^6.0.5",
+    "@electron-forge/plugin-webpack": "^6.0.5",
+    "@vercel/webpack-asset-relocator-loader": "^1.7.3",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "electron": "^23.2.0",
+    "node-gyp": "^9.3.1",
+    "sass": "^1.60.0",
+    "sass-loader": "^13.2.2",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.76.3"
+  }
+}
