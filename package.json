@@ -13,7 +13,7 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "gyp": "node-gyp build",
+    "node-gyp": "node-gyp rebuild",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\""
   },

@@ -2,10 +2,6 @@ import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'path';
 import settings from '/package.json';
 
-import addon from 'bindings';
-
-console.log(addon('hello').hello()); // 'world'
-
 let mainWindow;
 
 const createWindow = () => {

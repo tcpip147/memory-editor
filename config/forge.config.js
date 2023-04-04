@@ -1,8 +1,16 @@
+const fs = require('fs');
 const path = require('path');
 
 module.exports = {
   packagerConfig: {},
   rebuildConfig: {},
+  hooks: {
+    postMake: () => {
+      const src = path.join(__dirname, '../build');
+      const dst = path.join(__dirname, '../out/Memory Editor-win32-x64/resources/app/build');
+      fs.cpSync(src, dst, { recursive: true });
+    }
+  },
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
