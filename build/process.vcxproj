@@ -11,12 +11,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{E7CB073A-2E3A-364F-F3D0-34087AC2C053}</ProjectGuid>
+    <ProjectGuid>{D9DFC1E1-1A21-3DD5-351B-1DF086398A70}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>hello</RootNamespace>
+    <RootNamespace>process</RootNamespace>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <PreferredToolArchitecture>x64</PreferredToolArchitecture>
-    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
   <PropertyGroup Label="Configuration">
@@ -48,8 +48,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\include\node;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\src;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\openssl\config;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\openssl\openssl\include;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\uv\include;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\zlib;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\include\node;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\src;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\openssl\config;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\openssl\openssl\include;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\uv\include;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\zlib;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/Zc:__cplusplus -std:c++17 %(AdditionalOptions)</AdditionalOptions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
@@ -60,7 +60,7 @@
       <OmitFramePointers>false</OmitFramePointers>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=hello;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;DEBUG;_DEBUG;V8_ENABLE_CHECKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=process;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;DEBUG;_DEBUG;V8_ENABLE_CHECKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <StringPooling>true</StringPooling>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -72,7 +72,7 @@
       <AdditionalOptions>/LTCG:INCREMENTAL %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\\Users\\GongJungBae\\AppData\\Local\\node-gyp\\Cache\\16.18.0\\x64\\node.lib&quot;</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\\Users\\tcpip147\\AppData\\Local\\node-gyp\\Cache\\18.14.0\\x64\\node.lib&quot;</AdditionalDependencies>
       <AdditionalOptions>/LTCG:INCREMENTAL /ignore:4199 %(AdditionalOptions)</AdditionalOptions>
       <DelayLoadDLLs>node.exe;%(DelayLoadDLLs)</DelayLoadDLLs>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -84,14 +84,14 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\include\node;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\src;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\openssl\config;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\openssl\openssl\include;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\uv\include;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\zlib;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=hello;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;DEBUG;_DEBUG;V8_ENABLE_CHECKS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\include\node;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\src;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\openssl\config;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\openssl\openssl\include;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\uv\include;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\zlib;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=process;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;DEBUG;_DEBUG;V8_ENABLE_CHECKS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\include\node;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\src;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\openssl\config;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\openssl\openssl\include;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\uv\include;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\zlib;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/Zc:__cplusplus %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\include\node;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\src;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\openssl\config;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\openssl\openssl\include;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\uv\include;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\zlib;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/Zc:__cplusplus -std:c++17 %(AdditionalOptions)</AdditionalOptions>
       <BufferSecurityCheck>true</BufferSecurityCheck>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
       <DisableSpecificWarnings>4351;4355;4800;4251;4275;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
@@ -104,7 +104,7 @@
       <OmitFramePointers>true</OmitFramePointers>
       <Optimization>Full</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=hello;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=process;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <RuntimeTypeInfo>false</RuntimeTypeInfo>
       <StringPooling>true</StringPooling>
@@ -117,7 +117,7 @@
       <AdditionalOptions>/LTCG:INCREMENTAL %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\\Users\\GongJungBae\\AppData\\Local\\node-gyp\\Cache\\16.18.0\\x64\\node.lib&quot;</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\\Users\\tcpip147\\AppData\\Local\\node-gyp\\Cache\\18.14.0\\x64\\node.lib&quot;</AdditionalDependencies>
       <AdditionalOptions>/LTCG:INCREMENTAL /ignore:4199 %(AdditionalOptions)</AdditionalOptions>
       <DelayLoadDLLs>node.exe;%(DelayLoadDLLs)</DelayLoadDLLs>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -129,16 +129,16 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\include\node;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\src;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\openssl\config;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\openssl\openssl\include;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\uv\include;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\zlib;C:\Users\GongJungBae\AppData\Local\node-gyp\Cache\16.18.0\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=hello;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\include\node;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\src;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\openssl\config;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\openssl\openssl\include;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\uv\include;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\zlib;C:\Users\tcpip147\AppData\Local\node-gyp\Cache\18.14.0\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=process;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="..\binding.gyp"/>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\native\hello.cc">
-      <ObjectFileName>$(IntDir)\src\native\hello.obj</ObjectFileName>
+    <ClCompile Include="..\src\native\process.cpp">
+      <ObjectFileName>$(IntDir)\src\native\process.obj</ObjectFileName>
     </ClCompile>
     <ClCompile Include="D:\Projects\VSCode\memory-editor\node_modules\node-gyp\src\win_delay_load_hook.cc"/>
   </ItemGroup>

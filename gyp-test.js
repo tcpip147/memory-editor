@@ -1,3 +1,4 @@
 const bindings = require('bindings');
+const process = bindings({ bindings: 'process' });
 
-console.log(bindings({ bindings: 'hello' }).hello());
+console.log(process.readMemory(3));

@@ -36,7 +36,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\native\hello.cc">
+    <ClCompile Include="..\src\native\process.cpp">
       <Filter>..\src\native</Filter>
     </ClCompile>
     <ClCompile Include="D:\Projects\VSCode\memory-editor\node_modules\node-gyp\src\win_delay_load_hook.cc">
