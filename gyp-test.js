@@ -7,4 +7,7 @@ for (let i = 0; i < list.length; i++) {
     // console.log(list[i]);
 }
 
-process.readMemory(4672, 0x00E05EE0);
+const arr = process.readMemory(23508, 0x7FFD5F39E1B0, 3);
+for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i].toString(16));
+}
