@@ -26,7 +26,7 @@ void GetProcessList(napi_env env, napi_value arr)
     {
       TCHAR szProcessName[MAX_PATH] = TEXT("<unknown>");
 
-      HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, aProcesses[i]);
+      HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, aProcesses[i]);
 
       if (NULL != hProcess)
       {
@@ -85,15 +85,27 @@ static napi_value ReadMemory(napi_env env, napi_callback_info info)
   napi_value args[1];
   napi_get_cb_info(env, info, &argc, args, NULL, NULL);
 
-  napi_value pid = args[0];
+  int pid;
+  napi_status status = napi_get_value_int32(env, args[0], &pid);
+  if (status != napi_ok)
+    return NULL;
 
-  napi_status status = napi_generic_failure;
+  HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
+
+  unsigned int buf[4096] = { 0, };
+  ReadProcessMemory(hProcess, 0x7FFD60AF3D20, buf, sizeof buf, NULL);
+
+  for (int i = 0; i < 3; i++) {
+    printf("%02x\n", buf[i]);
+  }
+
+  status = napi_generic_failure;
   napi_value arr;
   status = napi_create_array(env, &arr);
   if (status != napi_ok)
     return NULL;
 
-  return pid;
+  return args[1];
 }
 
 static napi_value Init(napi_env env, napi_value exports)

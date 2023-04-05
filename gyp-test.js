@@ -1,4 +1,10 @@
 const bindings = require('bindings');
 const process = bindings({ bindings: 'process' });
 
-console.log(process.readMemory(3));
+const list = process.getList();
+
+for (let i = 0; i < list.length; i++) {
+    // console.log(list[i]);
+}
+
+process.readMemory(4672, 0x00E05EE0);
