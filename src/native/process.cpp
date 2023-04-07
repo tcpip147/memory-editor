@@ -87,6 +87,8 @@ static napi_value ReadMemory(napi_env env, napi_callback_info info)
   napi_value args[3];
   napi_get_cb_info(env, info, &argc, args, NULL, NULL);
 
+  napi_value arr, value;
+
   int pid;
   int64_t addr;
   int size;
@@ -104,36 +106,70 @@ static napi_value ReadMemory(napi_env env, napi_callback_info info)
 
   HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
 
-  unsigned int *buf = (unsigned int *)calloc(size, sizeof(unsigned int));
-
-  ReadProcessMemory(hProcess, (LPCVOID)addr, buf, sizeof(unsigned int) * size, NULL);
-
-  status = napi_generic_failure;
-  napi_value arr, value;
-  status = napi_create_array_with_length(env, size, &arr);
-  if (status != napi_ok)
-    return NULL;
-
-  for (int i = 0; i < size; i++)
+  if (NULL != hProcess)
   {
-    status = napi_create_int64(env, buf[i], &value);
+    unsigned int *buf = (unsigned int *)calloc(size, sizeof(unsigned int));
+
+    ReadProcessMemory(hProcess, (LPCVOID)addr, buf, sizeof(unsigned int) * size, NULL);
+
+    status = napi_generic_failure;
+    status = napi_create_array_with_length(env, size, &arr);
     if (status != napi_ok)
       return NULL;
 
-    status = napi_set_element(env, arr, i, value);
-    if (status != napi_ok)
-      return NULL;
+    for (int i = 0; i < size; i++)
+    {
+      status = napi_create_int64(env, buf[i], &value);
+      if (status != napi_ok)
+        return NULL;
+
+      status = napi_set_element(env, arr, i, value);
+      if (status != napi_ok)
+        return NULL;
+    }
+
+    free(buf);
+
+    CloseHandle(hProcess);
   }
-
-  free(buf);
-
-  CloseHandle(hProcess);
-
   return arr;
 }
 
 static napi_value WriteMemory(napi_env env, napi_callback_info info)
 {
+  size_t argc = 3;
+  napi_value args[3];
+  napi_get_cb_info(env, info, &argc, args, NULL, NULL);
+
+  int pid;
+  int64_t addr;
+  int rep;
+  napi_status status = napi_get_value_int32(env, args[0], &pid);
+  if (status != napi_ok)
+    return NULL;
+
+  status = napi_get_value_int64(env, args[1], &addr);
+  if (status != napi_ok)
+    return NULL;
+
+  status = napi_get_value_int32(env, args[2], &rep);
+  if (status != napi_ok)
+    return NULL;
+
+  HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pid);
+
+  if (NULL != hProcess)
+  {
+    unsigned int *buf = (unsigned int *)calloc(1, sizeof(unsigned int));
+    buf[0] = rep;
+
+    WriteProcessMemory(hProcess, (LPVOID)addr, buf, sizeof(unsigned int), NULL);
+
+    free(buf);
+    
+    CloseHandle(hProcess);
+  }
+
   return NULL;
 }
 
